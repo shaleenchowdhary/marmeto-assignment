@@ -1,13 +1,27 @@
 import { useEffect, useState } from 'react';
 
-const Details = ({ products }) => {
-  const [productsList, setProductsList] = useState(products);
-  // console.log(productsList);
+const Details = ({ products, updateTotalPrice, currencyFormat }) => {
+  const [productsList, setProductsList] = useState(products.items);
 
+  // Syncing productsList with latest products props
   useEffect(() => {
-    setProductsList(products);
-  }, [products]);
+    setProductsList(products.items);
+  }, [products.items]);
 
+  // console.log(productsList ? productsList[0].final_price : 'hello');
+
+  // updating total price on every change in the list of products
+  useEffect(() => {
+    const totalPrice =
+      productsList &&
+      productsList.reduce((sum, product) => sum + product.final_price, 0);
+
+    totalPrice
+      ? updateTotalPrice(currencyFormat(totalPrice))
+      : updateTotalPrice('₹0.00');
+  }, [productsList, updateTotalPrice, currencyFormat]);
+
+  // Changing the quatity to user's input
   const handleQuantityChange = (productKey, newQuantity) => {
     const updatedList = productsList.map((product) => {
       return product.key === productKey
@@ -21,10 +35,7 @@ const Details = ({ products }) => {
     setProductsList(updatedList);
   };
 
-  // const TotalPrice = () => {
-  //   productsList.reduce((total, product) => total + product.final_price, 0);
-  // };
-
+  // Removing the item from the productsList
   const handleRemove = (productKey) => {
     const updatedList = productsList.filter(
       (product) => product.key !== productKey
@@ -58,7 +69,9 @@ const Details = ({ products }) => {
                   <p className="text-gray-400">{product.title}</p>
                 </td>
 
-                <td className="tbody-data text-gray-400">₹ {product.price}</td>
+                <td className="tbody-data text-gray-400">
+                  {currencyFormat(product.price)}
+                </td>
 
                 <td className="tbody-data">
                   <input
@@ -73,7 +86,7 @@ const Details = ({ products }) => {
 
                 <td className="tbody-data">
                   <div className="flex items-center">
-                    <span>₹ {product.final_price}</span>
+                    <span>{currencyFormat(product.final_price)}</span>
                     <button
                       className="text-[#b88e2f] text-xl ml-auto"
                       onClick={() => handleRemove(product.key)}
