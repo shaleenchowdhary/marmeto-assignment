@@ -12,7 +12,10 @@ const Cart = ({ totalPrice }) => {
           <p className="text-[#b88e2f] lg:text-2xl text-xl">{totalPrice}</p>
         </div>
       </div>
-      <button className="border-[1px] cursor-pointer border-black px-10 lg:px-16 py-2 rounded-2xl text-xl">
+      {/* <button className="border-[1px] cursor-pointer border-black px-10 lg:px-16 py-2 rounded-2xl text-xl">
+        Check Out
+      </button> */}
+      <button className="border-[1px] cursor-pointer border-[#b88e2f] px-10 lg:px-16 py-2 rounded-2xl text-xl bg-gradient-to-r from-[white] to-[#b88e2f] active:scale-95 active:transform active:translate-y-1 transition-all duration-200 ease-in-out shadow-lg">
         Check Out
       </button>
     </div>

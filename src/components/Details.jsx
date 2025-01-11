@@ -75,12 +75,12 @@ const Details = ({ products, updateTotalPrice, currencyFormat }) => {
 
                 <td className="tbody-data">
                   <input
-                    type="number"
+                    // type="number"
                     value={product.quantity}
                     onChange={(e) =>
                       handleQuantityChange(product.key, Number(e.target.value))
                     }
-                    className="px-3 py-1 w-16 border-2 rounded-md border-gray-400"
+                    className="px-3 py-1 w-12 border-2 rounded-md border-gray-400"
                   />
                 </td>
 
