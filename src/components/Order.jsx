@@ -21,7 +21,7 @@ const Order = ({ products }) => {
     return new Intl.NumberFormat(productCurrency, {
       style: 'currency',
       currency: productCurrency,
-      minimumFractionDigits: 2,
+      minimumFractionDigits: 0, // value 2 was taking space in smaller screen size that why I set it to 0
     }).format(amount);
   }
 

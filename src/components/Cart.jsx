@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Cart = ({ totalPrice }) => {
   return (
     <div className="w-full md:w-[30%] bg-[#faf3ea] pt-4 pb-8">
@@ -15,9 +17,11 @@ const Cart = ({ totalPrice }) => {
       {/* <button className="border-[1px] cursor-pointer border-black px-10 lg:px-16 py-2 rounded-2xl text-xl">
         Check Out
       </button> */}
-      <button className="border-[1px] cursor-pointer border-[#b88e2f] px-10 lg:px-16 py-2 rounded-2xl text-xl bg-gradient-to-r from-[white] to-[#b88e2f] active:scale-95 active:transform active:translate-y-1 transition-all duration-200 ease-in-out shadow-lg">
-        Check Out
-      </button>
+      <Link to="/checkout">
+        <button className="border-[1px] cursor-pointer border-[#b88e2f] px-10 lg:px-16 py-2 rounded-2xl text-xl bg-gradient-to-r from-[white] to-[#b88e2f] active:scale-95 active:transform active:translate-y-1 transition-all duration-200 ease-in-out shadow-lg">
+          Check Out
+        </button>
+      </Link>
     </div>
   );
 };
