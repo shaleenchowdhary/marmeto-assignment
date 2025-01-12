@@ -17,6 +17,5 @@ This repository contains the solution to the Marmeto assignment, showcasing a fu
 - HTTP Requests: **Fetch**
 - Routing: **React router**
 - State Management: **React's useState and useEffect hooks**
-- Version Control: **Git**
 
 ### Explore the project live: [Marmeto Assignment](https://marmeto-assignment-shaleen.vercel.app/)
