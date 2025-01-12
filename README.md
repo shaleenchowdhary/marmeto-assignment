@@ -1,8 +1,22 @@
-# React + Vite
+# Marmeto Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the solution to the Marmeto assignment, showcasing a functional e-commerce cart page built with React and Tailwind CSS. The application demonstrates key frontend development skills, including routing, state management, and responsive design.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Product Listing**: Displays a list of products with details like title, price, and quantity.
+- **Cart Management**: Update product quantities. 
+- **Checkout**: Redirects to a dedicated checkout page via React Router.
+- **Styling**: Designed with Tailwind CSS for responsiveness and a polished UI.
+- **Dynamic Currency Formatting**: Uses `Intl.NumberFormat` for consistent formatting.
+
+## Technologies Used:
+
+- Frontend Framework: **React.js**
+- Styling: **Tailwind CSS**
+- HTTP Requests: **Fetch**
+- Routing: **React router**
+- State Management: **React's useState and useEffect hooks**
+- Version Control: **Git**
+
+### Explore the project live: [Marmeto Assignment](https://marmeto-assignment-shaleen.vercel.app/)
